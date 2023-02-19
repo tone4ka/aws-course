@@ -19,7 +19,7 @@ plugins:
 
 custom:
   client:
-    bucketName: travel-shop-react-redux-cloudfront2
+    bucketName: travel-shop-react-redux-cloudfront1
     distributionFolder: dist
   s3BucketName: ${self:custom.client.bucketName}
 
