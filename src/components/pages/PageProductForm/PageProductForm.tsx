@@ -22,6 +22,7 @@ export default function PageProductForm() {
   const removeProductCache = useRemoveProductCache();
   const { data, isLoading } = useAvailableProduct(id);
   const { mutateAsync: upsertAvailableProduct } = useUpsertAvailableProduct();
+
   const onSubmit = (values: AvailableProduct) => {
     const formattedValues = AvailableProductSchema.cast(values);
     const productToSave = id
@@ -74,6 +75,16 @@ export default function PageProductForm() {
                     autoComplete="off"
                     multiline
                     required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Field
+                    component={TextField}
+                    name="imageUrl"
+                    label="Image url"
+                    fullWidth
+                    autoComplete="off"
+                    multiline
                   />
                 </Grid>
                 <Grid item xs={12} sm={4}>
