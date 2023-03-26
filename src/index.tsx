@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { createRoot } from "react-dom/client";
 import App from "~/components/App/App";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -13,6 +14,21 @@ const queryClient = new QueryClient({
     queries: { refetchOnWindowFocus: false, retry: false, staleTime: Infinity },
   },
 });
+
+axios.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  function (error) {
+    if (error?.response?.status === 403 || error?.response?.status === 401) {
+      alert(
+        "User is not authorized to access this resource with an explicit deny"
+      );
+    }
+
+    return Promise.reject(error?.response ?? error);
+  }
+);
 
 const container = document.getElementById("app");
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
