@@ -15,10 +15,7 @@ export default function Header() {
   const open = Boolean(anchorEl);
 
   useEffect(() => {
-    localStorage.setItem(
-      "authorization_token",
-      "VE9ORV80S0E6VEVTVF9QQVNTV09SRA=="
-    );
+    localStorage.setItem("authorization_token", "VE9ORTRLQTpURVNUX1BBU1NXT1JE");
   }, []);
 
   const auth = true;
