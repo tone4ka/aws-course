@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -13,6 +13,11 @@ import Link from "@mui/material/Link";
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
+  useEffect(() => {
+    localStorage.setItem("authorization_token", "VE9ORTRLQTpURVNUX1BBU1NXT1JE");
+  }, []);
+
   const auth = true;
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
